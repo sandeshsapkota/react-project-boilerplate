@@ -1,0 +1,25 @@
+import axios, { AxiosInstance } from 'axios';
+import { getToken } from '@/utils/helpers/token.utils';
+
+const http = () => {
+  const axiosConfig = {
+    baseURL: 'http://localhost:3000/',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const instance: AxiosInstance = axios.create(axiosConfig);
+
+  instance.interceptors.request.use((config) => {
+    const token = getToken();
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+
+  return instance;
+};
+
+export default http;

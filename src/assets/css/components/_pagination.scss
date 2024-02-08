@@ -1,0 +1,36 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+
+  li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #666;
+    background-color: white;
+    transition: .3s all;
+
+    @include respond(sm) {
+      font-size: 12px;
+      padding: 6px 14px;
+    }
+
+  }
+
+  li:not(.disabled) a:hover, li.selected a {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+  }
+
+  .disabled a {
+    cursor: default;
+    opacity: .5;
+  }
+
+}
