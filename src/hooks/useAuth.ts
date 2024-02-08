@@ -8,9 +8,9 @@ import authSlice, {
   invalidToken,
 } from '@/store/slices/auth.slice';
 
-import { loginTypes, signupTypes } from '../../../@types/auth';
+import { loginTypes, signupTypes } from '../../@types/auth';
 import AuthService from '@/services/auth.service';
-import useStore from '@/utils/hooks/useStore';
+import useStore from '@/hooks/useStore';
 import notify from '@/utils/helpers/notification.utils';
 
 const useAuth = () => {
@@ -32,7 +32,7 @@ const useAuth = () => {
   const register = (data: signupTypes) => AuthService.register(data);
 
   /**
-   * REGISTER METHOD
+   * LOGIN METHOD
    * @param credentials
    * */
   const login = async (credentials: loginTypes) => {
@@ -63,6 +63,9 @@ const useAuth = () => {
     }
   };
 
+  /**
+   * FETCH PROFILE METHOD
+   * */
   const fetchProfile = async () => {
     try {
       const response = await AuthService.fetchProfile();
@@ -79,13 +82,13 @@ const useAuth = () => {
   return {
     user,
     token,
+    signing,
     authenticated,
     authenticating,
-    signing,
-    fetchProfile,
     register,
     login,
     logout,
+    fetchProfile,
   };
 };
 

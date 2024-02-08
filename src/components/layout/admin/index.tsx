@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import useAuth from '@/utils/hooks/useAuth';
+import useAuth from '@/hooks/useAuth';
 import Protected from '@/hoc/protected';
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {

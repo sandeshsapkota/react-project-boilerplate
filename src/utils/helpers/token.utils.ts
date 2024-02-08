@@ -2,6 +2,7 @@ export const getToken = () => {
   if (typeof localStorage !== 'undefined') {
     return localStorage.getItem('TOKEN_KEY');
   }
+  return undefined;
 };
 
 export const setToken = (token: string) => {

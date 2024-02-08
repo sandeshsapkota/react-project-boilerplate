@@ -1,26 +1,34 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '@/utils/hooks/useAuth';
-import LoginSignUpFormWrapper from '@/components/auth/LoginSignUpFormWrapper';
+
+import { useNavigate } from 'react-router';
+import useAuth from '@/hooks/useAuth';
+import { LoginSignUpFormWrapper } from '@/components';
 
 const Index = () => {
   /*
    * STATE
    * */
   const { register } = useAuth();
+  const navigate = useNavigate();
 
   /*
    * REDIRECT
    * */
-  const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    register({ username, password });
+    try {
+      const response: any = register({ username, password });
+      if (response && response.ok) {
+        navigate('/');
+      }
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (

@@ -1,5 +1,5 @@
 import { ReactNode, useRef, useState } from 'react';
-import useClickOutside from '@/utils/hooks/useClickOutside';
+import useClickOutside from '@/hooks/useClickOutside';
 import OpacityFader from '@/components/motion/OpacityFader';
 
 const Dropdown = ({

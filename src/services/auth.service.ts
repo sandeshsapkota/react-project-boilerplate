@@ -6,12 +6,8 @@ class AuthService {
    * FETCH PROFILE
    * */
   static async fetchProfile() {
-    try {
-      const response = await http().get('api/profile');
-      return response.data;
-    } catch (e: any) {
-      throw e;
-    }
+    const response = await http().get('api/profile');
+    return response.data;
   }
 
   /**
@@ -19,15 +15,11 @@ class AuthService {
    * @param credentials
    * */
   static async register(credentials: signupTypes) {
-    try {
-      const response = await http().post(
-        'api/register',
-        JSON.stringify(credentials),
-      );
-      return response.data;
-    } catch (e: any) {
-      throw e;
-    }
+    const response = await http().post(
+      'api/register',
+      JSON.stringify(credentials),
+    );
+    return response.data;
   }
 
   /**
@@ -35,11 +27,7 @@ class AuthService {
    * @param credentials
    * */
   static async login(credentials: loginTypes) {
-    try {
-      return await http().post('api/login', JSON.stringify(credentials));
-    } catch (e: any) {
-      throw e;
-    }
+    return http().post('api/login', JSON.stringify(credentials));
   }
 
   /**

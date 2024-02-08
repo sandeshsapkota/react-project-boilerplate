@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import useAuth from '@/utils/hooks/useAuth';
-import LoginSignUpFormWrapper from '@/components/auth/LoginSignUpFormWrapper';
+import useAuth from '@/hooks/useAuth';
+import { LoginSignUpFormWrapper } from '@/components';
 
 const Index = () => {
   /*

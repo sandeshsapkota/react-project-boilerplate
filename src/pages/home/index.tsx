@@ -1,4 +1,4 @@
-import AdminLayout from '@/components/layout/admin';
+import { AdminLayout } from '@/components';
 
 const Dashboard = () => {
   return (
