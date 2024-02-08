@@ -50,6 +50,16 @@ module.exports = {
         "import/prefer-default-export": "off",
         "no-param-reassign": 0,
         "import/no-extraneous-dependencies": "off",
-        "@typescript-eslint/no-shadow": "off"
+        "@typescript-eslint/no-shadow": "off",
+        "jsx-a11y/label-has-associated-control": ["error", {
+            "required": {
+                "some": ["nesting", "id"]
+            }
+        }],
+        "jsx-a11y/label-has-for": ["error", {
+            "required": {
+                "some": ["nesting", "id"]
+            }
+        }]
     },
 }

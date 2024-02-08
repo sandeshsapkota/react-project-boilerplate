@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '@/utils/hooks/useAuth';
 import LoginSignUpFormWrapper from '@/components/auth/LoginSignUpFormWrapper';
 
@@ -7,7 +8,7 @@ const Index = () => {
   /*
    * STATE
    * */
-  const { login, authenticating, authenticated } = useAuth();
+  const { login, authenticated } = useAuth();
 
   /*
    * REDIRECT
@@ -19,22 +20,59 @@ const Index = () => {
     }
   }, [authenticated, navigate]);
 
-  const handleSubmit = () => login({ username: 'sundar', password: 'sundar' });
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    login({ username, password });
+  };
 
   return (
     <LoginSignUpFormWrapper title="Sign in to your account">
-      <button
-        onClick={handleSubmit}
-        className="bg-blue-500 text-white rounded-md px-8  py-3 flex items-center gap-6"
-      >
-        Login {authenticating && <span className="loader" />}
-      </button>
-      <button
-        onClick={() => navigate('/register')}
-        className="bg-blue-500 text-white rounded-md px-8  py-3 flex items-center gap-6"
-      >
-        Register
-      </button>
+      <form onSubmit={handleSubmit} className="grid gap-8">
+        <div className="grid gap-6">
+          <div>
+            <label htmlFor="username" className="text-sm">
+              Username
+            </label>
+            <input
+              className="bg-[#f9fafb] text-gray-900 sm:text-sm rounded block w-full px-3 py-2 border !border-gray-200 border-solid"
+              type="text"
+              value={username}
+              id="username"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="text-sm">
+              Password
+            </label>
+            <input
+              className="bg-[#f9fafb] text-gray-900 sm:text-sm rounded block w-full px-3 py-2 border !border-gray-200 border-solid"
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-primary-800"
+        >
+          Sign In
+        </button>
+        <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+          Don’t have an account yet?{' '}
+          <Link
+            to="/register"
+            className="font-medium text-blue-600 hover:underline dark:text-primary-500"
+          >
+            Sign up
+          </Link>
+        </p>
+      </form>
     </LoginSignUpFormWrapper>
   );
 };
