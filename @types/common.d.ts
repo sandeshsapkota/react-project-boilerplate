@@ -1,10 +1,6 @@
-export interface LabelValueType {
+export interface LabelValueType<T = string> {
   label: string;
-  value: string | number;
+  value: T;
 }
 
-export interface DetailLabelValue {
-  label: string;
-  value: string | number;
-  link?: string;
-}
+export type LabelValueWithNumberType = LabelValueType<string | number>;

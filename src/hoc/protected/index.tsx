@@ -7,12 +7,13 @@ interface ProtectedProps {
 }
 
 const Protected: FC<ProtectedProps> = (props) => {
+  const navigate = useNavigate();
+
   /*
    * STATE AND PROPS
    * */
   const { children } = props;
   const { token, fetchProfile, authenticated } = useAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     token ? fetchProfile() : navigate('/');

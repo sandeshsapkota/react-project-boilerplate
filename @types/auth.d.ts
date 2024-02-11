@@ -1,9 +1,9 @@
-export interface loginTypes {
+export interface loginType {
   username: string;
   password: string;
 }
 
-export interface signupTypes {
+export interface signupType {
   username: string;
   password: string;
 }

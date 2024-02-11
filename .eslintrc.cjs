@@ -34,6 +34,7 @@ module.exports = {
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-unused-expressions": "off",
         "react/function-component-definition": "off",
+        'func-names': 'off',
         "@typescript-eslint/naming-convention": [
             "error",
             {

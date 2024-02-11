@@ -19,7 +19,6 @@ const OpacityFader: FC<PropsWithChildren<OpacityFaderProps>> = (props) => {
    * */
   const { classes, animate, children, duration } = props;
 
-  // AnimatePresence - animate components when they're removed from the dom
   return (
     <AnimatePresence>
       {animate && (

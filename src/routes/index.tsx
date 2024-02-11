@@ -1,6 +1,7 @@
 import Welcome from '@/pages';
 import Home from '@/pages/home';
 import Register from '@/pages/register';
+import Login from '@/pages/login';
 
 const routes = [
   {
@@ -8,12 +9,16 @@ const routes = [
     element: <Welcome />,
   },
   {
-    path: '/home',
-    element: <Home />,
+    path: '/login',
+    element: <Login />,
   },
   {
     path: '/register',
     element: <Register />,
+  },
+  {
+    path: '/home',
+    element: <Home />,
   },
 ];
 

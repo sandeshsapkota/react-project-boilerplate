@@ -8,7 +8,7 @@ import authSlice, {
   invalidToken,
 } from '@/store/slices/auth.slice';
 
-import { loginTypes, signupTypes } from '../../@types/auth';
+import { loginType, signupType } from '../../@types/auth';
 import AuthService from '@/services/auth.service';
 import useStore from '@/hooks/useStore';
 import notify from '@/utils/helpers/notification.utils';
@@ -29,13 +29,13 @@ const useAuth = () => {
    * REGISTER METHOD
    * @param data
    * */
-  const register = (data: signupTypes) => AuthService.register(data);
+  const register = (data: signupType) => AuthService.register(data);
 
   /**
    * LOGIN METHOD
    * @param credentials
    * */
-  const login = async (credentials: loginTypes) => {
+  const login = async (credentials: loginType) => {
     dispatch(loginStart());
     try {
       const response: any = await AuthService.login(credentials);

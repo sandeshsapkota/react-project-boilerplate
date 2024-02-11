@@ -3,7 +3,7 @@ import { getToken } from '@/utils/helpers/token.utils';
 
 const http = () => {
   const axiosConfig = {
-    baseURL: 'http://localhost:3000/',
+    baseURL: import.meta.env.VITE_APP_BASE_URL,
     headers: {
       'Content-Type': 'application/json',
     },
