@@ -29,7 +29,7 @@ const Dropdown = ({
       <OpacityFader
         animate={open}
         duration={0.2}
-        classes="absolute right-0 z-[99] bg-white shadow-2xl p-5 sm:p-8 rounded-2xl padding-deducted-vw-width sm:w-[458px]"
+        classes="absolute right-0 z-[99] bg-white shadow-2xl p-5 sm:p-8 rounded-xl  sm:w-min-[100px]"
       >
         {content}
       </OpacityFader>

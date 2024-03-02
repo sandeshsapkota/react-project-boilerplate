@@ -5,6 +5,7 @@ import DeleteIcon from '@/assets/icons/delete.svg?react';
 import SearchIcon from '@/assets/icons/search.svg?react';
 import MenuIcon from '@/assets/icons/menu.svg?react';
 import SearchClear from '@/assets/icons/search-clear.svg?react';
+import LogoSvg from '@/assets/icons/logo.svg?react';
 
 export {
   CSVIcon,
@@ -14,4 +15,5 @@ export {
   SearchIcon,
   MenuIcon,
   SearchClear,
+  LogoSvg,
 };

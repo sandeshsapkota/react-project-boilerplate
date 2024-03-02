@@ -39,13 +39,11 @@ const useAuth = () => {
     dispatch(loginStart());
     try {
       const response: any = await AuthService.login(credentials);
-      if (response.data.ok) {
-        dispatch(loginSuccess(response.data));
-      } else {
-        dispatch(loginFailure(response.data));
-      }
+      dispatch(loginSuccess(response.data));
     } catch (e: any) {
+      console.log(e);
       dispatch(loginFailure(e));
+      notify('Credentials does not matched', 'error');
     }
   };
 
@@ -69,13 +67,10 @@ const useAuth = () => {
   const fetchProfile = async () => {
     try {
       const response = await AuthService.fetchProfile();
-      if (response.ok) {
-        dispatch(setUser(response));
-      } else {
-        dispatch(invalidToken());
-      }
+      dispatch(setUser(response));
     } catch (e: any) {
       console.error(e);
+      dispatch(invalidToken());
     }
   };
 
