@@ -1,4 +1,3 @@
-import Welcome from '@/pages';
 import Home from '@/pages/home';
 import Register from '@/pages/register';
 import Login from '@/pages/login';
@@ -6,7 +5,7 @@ import Login from '@/pages/login';
 const routes = [
   {
     path: '/',
-    element: <Welcome />,
+    element: <Login />,
   },
   {
     path: '/login',

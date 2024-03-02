@@ -1,7 +1,7 @@
 /**
  * Generates an array of incremental numbers from 1 to the limit.
  * @param limit - The upper limit of the array.
- * @returns An array of incremental numbers.
+ * @returns an array of incremental numbers.
  */
 const generateIncrementalArray = (limit: number): number[] => {
   return Array.from({ length: limit }, (_, index) => index + 1);
