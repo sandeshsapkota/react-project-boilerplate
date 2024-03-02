@@ -1,25 +1,17 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 import { getToken } from '@/utils/helpers/token.utils';
 
 const http = () => {
+  const ID_TOKEN = getToken();
   const axiosConfig = {
     baseURL: import.meta.env.VITE_APP_BASE_URL,
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `{"token":"${ID_TOKEN}"}`,
     },
   };
 
-  const instance: AxiosInstance = axios.create(axiosConfig);
-
-  instance.interceptors.request.use((config) => {
-    const token = getToken();
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  });
-
-  return instance;
+  return axios.create(axiosConfig);
 };
 
 export default http;

@@ -23,7 +23,7 @@ const useAuth = () => {
    * REDUX STORE
    * */
   const { user, token, authenticated, authenticating, signing } =
-    useStore().auth;
+    useStore('auth');
 
   /**
    * REGISTER METHOD
