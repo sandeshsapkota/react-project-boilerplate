@@ -43,7 +43,7 @@ const useAuth = () => {
     } catch (e: any) {
       console.log(e);
       dispatch(loginFailure(e));
-      notify('Credentials does not matched', 'error');
+      notify('Something went wrong.', 'error');
     }
   };
 
