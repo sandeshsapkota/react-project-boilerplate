@@ -8,7 +8,7 @@ import authSlice, {
   invalidToken,
 } from '@/store/slices/auth.slice';
 
-import { loginType, signupType } from '../../@types/auth';
+import { loginType, signupType } from '@/@types/auth';
 import AuthService from '@/services/auth.service';
 import useStore from '@/hooks/useStore';
 import notify from '@/utils/helpers/notification.utils';

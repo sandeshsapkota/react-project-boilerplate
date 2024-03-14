@@ -1,3 +1,3 @@
-const DEFAULT_ITEMS_PER_PAGE = 10;
+const ADMIN_HOME_PAGE = '/dashboard';
 
-export { DEFAULT_ITEMS_PER_PAGE };
+export { ADMIN_HOME_PAGE };

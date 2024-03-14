@@ -22,7 +22,11 @@ const Index = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     try {
-      const response: any = register({ username, password });
+      const response: any = register({
+        username,
+        password,
+        confirm_password: password,
+      });
       if (response && response.ok) {
         navigate('/');
       }

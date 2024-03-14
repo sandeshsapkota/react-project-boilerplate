@@ -3,22 +3,24 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import useAuth from '@/hooks/useAuth';
 import { LoginSignUpFormWrapper } from '@/components';
+import { ADMIN_HOME_PAGE } from '@/utils/constants/common';
 
 const Index = () => {
   /*
    * STATE
    * */
-  const { login, authenticated } = useAuth();
+  const { login, token } = useAuth();
 
   /*
    * REDIRECT
    * */
   const navigate = useNavigate();
+
   useEffect(() => {
-    if (authenticated) {
-      navigate('/home');
+    if (token) {
+      navigate(ADMIN_HOME_PAGE);
     }
-  }, [authenticated, navigate]);
+  }, [token]);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -55,6 +57,29 @@ const Index = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-start">
+              <div className="flex items-center h-5">
+                <input
+                  id="remember"
+                  aria-describedby="remember"
+                  type="checkbox"
+                  className="w-4 h-4  border border-gray-700 opacity-60  bg-gray-50 checked:opacity-100"
+                />
+              </div>
+              <div className="ml-3 text-sm">
+                <label
+                  htmlFor="remember"
+                  className="text-primary-500 dark:text-primary-600"
+                >
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <a className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+              Forgot password?
+            </a>
           </div>
         </div>
         <button

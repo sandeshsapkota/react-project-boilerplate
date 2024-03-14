@@ -1,4 +1,4 @@
-import { loginType, signupType } from '../../@types/auth';
+import { loginType, signupType } from '@/@types/auth';
 import http from '@/utils/http/http.utils';
 
 class AuthService {
@@ -12,13 +12,10 @@ class AuthService {
 
   /**
    * SIGN UP
-   * @param credentials
+   * @param data
    * */
-  static async register(credentials: signupType) {
-    const response = await http().post(
-      'api/register',
-      JSON.stringify(credentials),
-    );
+  static async register(data: signupType) {
+    const response = await http().post('api/register', data);
     return response.data;
   }
 
@@ -27,7 +24,7 @@ class AuthService {
    * @param credentials
    * */
   static async login(credentials: loginType) {
-    return http().post('api/login', JSON.stringify(credentials));
+    return http().post('api/login', credentials);
   }
 
   /**

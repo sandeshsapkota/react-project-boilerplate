@@ -6,4 +6,5 @@ export interface loginType {
 export interface signupType {
   username: string;
   password: string;
+  confirm_password: string;
 }

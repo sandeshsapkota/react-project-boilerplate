@@ -2,7 +2,7 @@ import { AdminLayout } from '@/components';
 
 const Dashboard = () => {
   return (
-    <AdminLayout>
+    <AdminLayout title="Dashboard">
       <div className="p-8 text-xl items-center justify-center">Hello World</div>
     </AdminLayout>
   );
