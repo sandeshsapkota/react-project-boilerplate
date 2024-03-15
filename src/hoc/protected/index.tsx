@@ -14,7 +14,6 @@ const Protected: FC<ProtectedProps> = (props) => {
    * */
   const { children } = props;
   const { token, fetchProfile, authenticated } = useAuth();
-  console.log(token);
 
   useEffect(() => {
     token ? fetchProfile() : navigate('/');
