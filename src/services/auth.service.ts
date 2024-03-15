@@ -15,7 +15,7 @@ class AuthService {
    * @param data
    * */
   static async register(data: signupType) {
-    const response = await http().post('api/register', data);
+    const response = await http().post('api/register', JSON.stringify(data));
     return response.data;
   }
 
@@ -24,7 +24,7 @@ class AuthService {
    * @param credentials
    * */
   static async login(credentials: loginType) {
-    return http().post('api/login', credentials);
+    return http().post('api/login', JSON.stringify(credentials));
   }
 
   /**

@@ -20,29 +20,4 @@ const addCommasToNumber = (number: number) => {
   return number.toLocaleString();
 };
 
-/**
- * Search array of objects based on key or keys provided
- * @returns array of object matched with key or keys
- * @param search
- * @param objects
- * @param searchBy
- */
-
-const searchFilter = <T>(
-  search: string,
-  objects: T[],
-  searchBy: (keyof T & string) | (keyof T & string)[],
-): T[] | undefined => {
-  const query = search.toLowerCase();
-  return objects.filter((item) =>
-    typeof searchBy === 'string'
-      ? /* when providing single key */
-        String(item[searchBy]).toLowerCase().includes(query)
-      : /* when providing multiple keys */
-        searchBy.some((key) =>
-          String(item[key]).toLowerCase().includes(search),
-        ),
-  );
-};
-
-export { generateIncrementalArray, addCommasToNumber, searchFilter };
+export { generateIncrementalArray, addCommasToNumber };
