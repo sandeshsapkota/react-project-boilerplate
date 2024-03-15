@@ -1,7 +1,11 @@
 import axios from 'axios';
 import { getToken } from '@/utils/helpers/token.utils';
 
-const http = () => {
+type HttpTypes = {
+  additionalHeader?: { 'Content-Type'?: string };
+};
+
+const http = (config?: HttpTypes) => {
   /*
    * axios config
    * */
@@ -9,6 +13,7 @@ const http = () => {
     baseURL: import.meta.env.VITE_APP_BASE_URL,
     headers: {
       'Content-Type': 'application/json',
+      ...config?.additionalHeader,
     },
   };
 
