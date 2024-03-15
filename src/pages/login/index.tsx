@@ -78,7 +78,7 @@ const Index = () => {
               </div>
             </div>
             <Link
-              to="#"
+              to="/forgot-password"
               className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
             >
               Forgot password?

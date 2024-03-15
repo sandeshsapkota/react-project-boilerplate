@@ -1,6 +1,7 @@
 import Dashboard from '@/pages/dashboard';
 import Register from '@/pages/register';
 import Login from '@/pages/login';
+import ForgotPassword from '@/pages/forget-password';
 import { ADMIN_HOME_PAGE } from '@/utils/constants/common';
 
 const routes = [
@@ -15,6 +16,10 @@ const routes = [
   {
     path: '/register',
     element: <Register />,
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPassword />,
   },
   {
     path: ADMIN_HOME_PAGE,
