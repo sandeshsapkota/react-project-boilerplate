@@ -1,8 +1,10 @@
-import Dashboard from '@/pages/dashboard';
-import Register from '@/pages/register';
-import Login from '@/pages/login';
-import ForgotPassword from '@/pages/forget-password';
+import { lazy } from 'react';
 import { ADMIN_HOME_PAGE } from '@/utils/constants/common';
+
+const Dashboard = lazy(() => import('@/pages/dashboard'));
+const Register = lazy(() => import('@/pages/register'));
+const Login = lazy(() => import('@/pages/login'));
+const ForgotPassword = lazy(() => import('@/pages/forget-password'));
 
 const routes = [
   {
