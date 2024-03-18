@@ -27,12 +27,12 @@ This React boilerplate provides a solid starting point for building web applicat
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:sandeshsapkota/github_api.git
+   git clone git@github.com:sandeshsapkota/react-project-boilerplate.git
 
 2. Navigate to the project directory:
 
    ```bash
-   cd github_api
+   cd react-project-boilerplate
 
 3. Install dependencies
 
