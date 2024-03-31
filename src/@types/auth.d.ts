@@ -8,3 +8,5 @@ export interface signupType {
   password: string;
   confirm_password: string;
 }
+
+export type RolesType = 'admin' | 'developer' | 'manager';
