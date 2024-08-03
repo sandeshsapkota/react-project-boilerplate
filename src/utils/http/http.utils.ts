@@ -10,7 +10,7 @@ const http = (config?: HttpTypes) => {
    * axios config
    * */
   const axiosConfig = {
-    baseURL: import.meta.env.VITE_APP_BASE_URL,
+    baseURL: 'http://localhost:3000/',
     headers: {
       'Content-Type': 'application/json',
       ...config?.additionalHeader,

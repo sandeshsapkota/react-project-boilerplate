@@ -18,11 +18,11 @@ const Header = () => {
     <header className="p-4 bg-blue-100 flex justify-between">
       <Logo />
       <div className="flex gap-2">
+        <Link to="/" className="text-blue-500">
+          Home
+        </Link>
         <Link to="/dashboard" className="text-blue-500">
           Dashboard
-        </Link>
-        <Link to="/reports" className="text-blue-500">
-          Reports
         </Link>
       </div>
       <Dropdown
