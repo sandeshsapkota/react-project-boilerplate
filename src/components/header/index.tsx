@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="p-4 bg-blue-100 flex justify-between">
+    <header className="p-4 bg-black  flex justify-between">
       <Logo />
       <div className="flex gap-2">
         <Link to="/" className="text-blue-500">
