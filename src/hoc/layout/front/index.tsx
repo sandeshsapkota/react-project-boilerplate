@@ -12,7 +12,7 @@ const FrontLayout = ({
     <>
       <title>{title ? `${title} | app name` : 'app name'}</title>
       <Header />
-      <main>{children}</main>
+      <main className="p-5">{children}</main>
     </>
   );
 };
