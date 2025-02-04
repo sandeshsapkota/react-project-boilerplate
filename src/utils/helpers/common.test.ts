@@ -1,13 +1,46 @@
-import {sumArray} from "@/utils/helpers/common.utils";
+import {searchFilter} from "@/utils/helpers/common.utils";
 import {describe, it, expect} from "vitest";
 
 
-describe("sumArray", () => {
-    it("should return the sum of an array of numbers", () => {
-        expect(sumArray([1, 2, 3])).toBe(6);
+describe("search array of objects", () => {
+    const people = [
+        {name: "John", lastName: "Doe"},
+        {name: "Emma", lastName: "Smith"},
+        {name: "Liam", lastName: "Johnson"},
+        {name: "Olivia", lastName: "Brown"},
+        {name: "Noah", lastName: "Williams"}
+    ];
+
+    it("search based on single key", () => {
+        const input = searchFilter('John', people, 'name');
+        const output = [{name: "John", lastName: "Doe"}];
+
+        expect(input).toEqual(output);
     });
 
-    it("should return 0 for an empty array", () => {
-        expect(sumArray([])).toBe(0);
+    it("in case of small case", () => {
+        const input = searchFilter('john', people, 'name');
+        const output = [{name: "John", lastName: "Doe"}];
+
+        expect(input).toEqual(output);
+    });
+
+    it("search based on multiple key", () => {
+        const input = searchFilter('John', people, ['name', 'lastName']);
+        const output = [
+            {name: "John", lastName: "Doe"},
+            {name: "Liam", lastName: "Johnson"}
+        ]
+        expect(input).toEqual(output);
+    });
+
+    it("in case of empty key", () => {
+        const input = searchFilter('', people, ['name', 'lastName']);
+        expect(input).toEqual([]);
+    });
+
+    it("in case of not matching", () => {
+        const input = searchFilter('zz', people, ['name', 'lastName']);
+        expect(input).toEqual([]);
     });
 });

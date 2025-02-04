@@ -20,5 +20,28 @@ export const addCommasToNumber = (number: number) => {
     return number.toLocaleString();
 };
 
-export const sumArray = (array: number[]) => array.reduce((a, b) => a + b);
+/**
+ * Search array of objects based on key or keys provided
+ * @returns array of object matched with key or keys
+ * @param search
+ * @param objects
+ * @param searchBy
+ */
 
+export const searchFilter = <T>(
+    searchQuery: string,
+    objects: T[],
+    searchBy: (keyof T & string) | (keyof T & string)[],
+): T[] | [] => {
+    const query = searchQuery.toLowerCase();
+    if(!query) return [];
+    return objects.filter((item) =>
+        typeof searchBy === 'string'
+            ? /* when providing single key */
+            String(item[searchBy]).toLowerCase().includes(query)
+            : /* when providing multiple keys */
+            searchBy.some((key) =>
+                String(item[key]).toLowerCase().includes(query),
+            ),
+    );
+};
