@@ -8,26 +8,12 @@ export const generateIncrementalArray = (limit: number): number[] => {
 };
 
 /**
- * Adds comma to the number
- * @param number
- * @returns number with comma added
- */
-export const addCommasToNumber = (number: number) => {
-    if (Number.isNaN(number)) {
-        console.error('Input is not a valid number');
-        return '';
-    }
-    return number.toLocaleString();
-};
-
-/**
  * Search array of objects based on key or keys provided
  * @returns array of object matched with key or keys
  * @param search
  * @param objects
  * @param searchBy
  */
-
 export const searchFilter = <T>(
     searchQuery: string,
     objects: T[],
