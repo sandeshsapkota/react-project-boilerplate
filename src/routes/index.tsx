@@ -6,6 +6,7 @@ import ForgotPassword from '@/pages/forget-password';
 import { ADMIN_HOME_PAGE } from '@/utils/constants/common';
 import { AdminLayout } from '@/components';
 import Reports from '@/pages/reports';
+import Home from "@/pages/home";
 
 /*
  * Higher Order Component (HOC) to wrap a component with AdminLayout.
@@ -24,7 +25,11 @@ const withAdminLayout = (component: ReactNode) => (
 const routes = [
   {
     path: '/',
-    element: <Login />,
+    element: <Home/>,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard/>,
   },
   {
     path: '/login',
